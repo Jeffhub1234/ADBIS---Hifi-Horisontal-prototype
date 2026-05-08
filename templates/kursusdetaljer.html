@@ -1,0 +1,278 @@
+<!DOCTYPE html><html class="light" lang="da"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Course Detail Modal - TVK Systemet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffddba",
+                    "primary": "#002045",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-secondary-container": "#54647a",
+                    "surface-tint": "#455f88",
+                    "secondary-container": "#d0e1fb",
+                    "inverse-surface": "#2f3033",
+                    "outline-variant": "#c4c6cf",
+                    "tertiary-container": "#4f2e00",
+                    "surface-dim": "#dad9dd",
+                    "primary-fixed": "#d6e3ff",
+                    "on-background": "#1a1c1e",
+                    "background": "#faf9fd",
+                    "surface-container": "#efedf1",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#86a0cd",
+                    "on-primary-fixed": "#001b3c",
+                    "on-tertiary-fixed-variant": "#633f0f",
+                    "primary-fixed-dim": "#adc7f7",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#0b1c30",
+                    "tertiary-fixed-dim": "#f2bc82",
+                    "secondary": "#505f76",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "on-tertiary-fixed": "#2b1700",
+                    "inverse-on-surface": "#f1f0f4",
+                    "primary-container": "#1a365d",
+                    "surface-container-high": "#e9e7eb",
+                    "surface": "#faf9fd",
+                    "tertiary": "#321b00",
+                    "on-surface-variant": "#43474e",
+                    "on-tertiary-container": "#c6955e",
+                    "surface-container-highest": "#e3e2e6",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f4f3f7",
+                    "inverse-primary": "#adc7f7",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "surface-bright": "#faf9fd",
+                    "on-surface": "#1a1c1e",
+                    "outline": "#74777f",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e3e2e6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Manrope"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen flex items-center justify-center relative">
+<!-- Background Simulation (Dashboard/Vagter context) -->
+<div class="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-30">
+<div class="w-full h-full bg-surface-container-low p-8 grid grid-cols-12 gap-6">
+<div class="col-span-3 bg-surface-container rounded-xl h-full shadow-[0px_12px_32px_rgba(26,28,30,0.06)]"></div>
+<div class="col-span-9 flex flex-col gap-6">
+<div class="h-24 bg-surface-container rounded-xl shadow-[0px_12px_32px_rgba(26,28,30,0.06)]"></div>
+<div class="grid grid-cols-3 gap-6 flex-1">
+<div class="bg-surface-container rounded-xl shadow-[0px_12px_32px_rgba(26,28,30,0.06)]"></div>
+<div class="bg-surface-container rounded-xl shadow-[0px_12px_32px_rgba(26,28,30,0.06)]"></div>
+<div class="bg-surface-container rounded-xl shadow-[0px_12px_32px_rgba(26,28,30,0.06)]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Overlay Backdrop -->
+<div class="fixed inset-0 bg-surface/80 backdrop-blur-xl z-40 transition-opacity"></div>
+<!-- Modal Container -->
+<main class="relative z-50 w-full max-w-3xl bg-surface-container-lowest rounded-xl shadow-[0px_12px_32px_rgba(26,28,30,0.06)] border border-outline-variant/20 flex flex-col overflow-hidden mx-4 my-8 max-h-[921px]">
+<!-- Modal Header -->
+<header class="flex items-center justify-between px-8 py-6 bg-surface-container-lowest z-10 sticky top-0">
+<div>
+<p class="font-body text-sm font-medium text-on-surface-variant mb-1 uppercase tracking-widest" style="">Kursus Detaljer</p>
+<h1 class="font-headline text-2xl font-bold tracking-tight text-on-surface" style="">Franske fristelser - bistro classique #B-4922<span style="font-size: 1.5rem; letter-spacing: -0.025em;"></span></h1>
+</div>
+<div class="flex items-center gap-3 mr-3">
+<button class="inline-flex items-center gap-2 rounded-md border border-primary/15 bg-white px-4 py-2 text-sm font-semibold text-primary shadow-sm hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+          Rediger kursus
+        </button>
+<button class="inline-flex items-center gap-2 rounded-md border border-error/15 bg-error/10 px-4 py-2 text-sm font-semibold text-error shadow-sm hover:bg-error/15 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+          Slet kursus
+        </button>
+</div>
+<button aria-label="Close modal" class="text-on-surface-variant hover:text-on-surface transition-colors p-2 rounded-full hover:bg-surface-container-low" type="button" style="">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 0;">close</span>
+</button>
+</header>
+<!-- Modal Body (Scrollable) -->
+<div class="px-8 pb-8 overflow-y-auto flex-1 flex flex-col gap-8 custom-scrollbar">
+<!-- Kursusinformation -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: &quot;FILL&quot; 1;">menu_book</span>
+<h2 class="font-headline text-lg font-semibold text-on-surface">Kursusinformation</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Info Card -->
+<section class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-4">
+<h3 class="font-headline text-base font-semibold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" style="font-variation-settings: &quot;FILL&quot; 0;">info</span>
+                                                Information
+                                        </h3>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center py-2">
+<span class="font-body text-sm text-on-surface-variant">Lokation</span>
+<span class="font-body text-sm font-medium text-on-surface">Valby - Køkken 1</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="font-body text-sm text-on-surface-variant">Dato</span>
+<span class="font-body text-sm font-medium text-on-surface">14. Jan 2026</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="font-body text-sm text-on-surface-variant">Tidsrum</span>
+<span class="font-body text-sm font-medium text-on-surface">16:30 - 20:30</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="font-body text-sm text-on-surface-variant">Deltagere (PAX)</span>
+<span class="font-body text-sm font-medium text-on-surface bg-surface-container px-3 py-1 rounded-full">20</span>
+</div>
+</div>
+</section>
+<!-- Bemærkninger Card -->
+<section class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-4">
+<h3 class="font-headline text-base font-semibold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" style="font-variation-settings: &quot;FILL&quot; 0;">notes</span>
+                                                Bemærkninger
+                                        </h3>
+<div class="flex flex-col gap-3 flex-1">
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/20 flex gap-3 items-start">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px] mt-0.5" style="font-variation-settings: &quot;FILL&quot; 1;">warning</span>
+<div>
+<p class="font-body text-sm font-medium text-on-surface">Allergener</p>
+<p class="font-body text-sm text-on-surface-variant mt-1">2x Glutenallergi, 1x Nøddeallergi (kraftig). Sørg for separate arbejdsstationer.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/20 flex gap-3 items-start">
+<span class="material-symbols-outlined text-on-secondary-container text-[20px] mt-0.5" style="font-variation-settings: &quot;FILL&quot; 0;">info</span>
+<div>
+<p class="font-body text-sm font-medium text-on-surface">Særlige forhold</p>
+<p class="font-body text-sm text-on-surface-variant mt-1">Teambuilding event for firma. Der skal være plads til en kort introduktion i starten.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+
+<!-- Vagter -->
+<section class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-6">
+<div class="flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+<div>
+<h2 class="font-headline text-lg font-semibold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: &quot;FILL&quot; 1;">schedule</span>
+                                                        Vagter
+                                                </h2>
+</div>
+<button class="inline-flex items-center gap-2 rounded-md border border-primary/15 bg-white px-4 py-2 text-sm font-semibold text-primary shadow-sm hover:bg-surface-container-low transition-colors w-fit" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                                        Opret vagt
+                                </button>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Underviser vagt -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant/20 p-4 flex flex-col gap-4">
+<div class="flex items-start justify-between gap-3">
+<div>
+<p class="font-body text-xs uppercase tracking-wider text-on-surface-variant">Vagt 1</p>
+<h3 class="font-headline text-base font-semibold text-on-surface">Underviser vagt</h3>
+<p class="font-body text-sm text-on-surface-variant mt-1">14. Jan 2026, 16:00 - 21:00</p>
+</div>
+</div>
+<label class="font-body text-sm font-medium text-on-surface flex items-center gap-2" for="underviser-select">
+                                                        Tildelt medarbejder
+                                                        <span class="text-error text-xs">*</span>
+</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant/20 text-on-surface font-body text-sm rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors cursor-pointer shadow-sm" id="underviser-select">
+<option disabled="" selected="" value="">Vælg underviser...</option>
+<option value="1">Mads Hansen (Primær)</option>
+<option value="2">Camilla Larsen</option>
+<option value="3">Peter Jensen</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</article>
+
+<!-- Afvikler vagt -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant/20 p-4 flex flex-col gap-4">
+<div class="flex items-start justify-between gap-3">
+<div>
+<p class="font-body text-xs uppercase tracking-wider text-on-surface-variant">Vagt 2</p>
+<h3 class="font-headline text-base font-semibold text-on-surface">Afvikler vagt</h3>
+<p class="font-body text-sm text-on-surface-variant mt-1">14. Jan 2026, 14:30 - 22:30</p>
+</div>
+</div>
+<label class="font-body text-sm font-medium text-on-surface flex items-center gap-2" for="afvikler-select">
+                                                        Tildelt medarbejder
+                                                        <span class="text-error text-xs">*</span>
+</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant/20 text-on-surface font-body text-sm rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors cursor-pointer shadow-sm" id="afvikler-select">
+<option disabled="" selected="" value="">Vælg afvikler...</option>
+<option value="4">Lars Nissen</option>
+<option value="5">Sofie Holm</option>
+<option value="6">Jonas Krag</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+</div>
+<!-- Modal Footer -->
+<footer class="flex items-center justify-end gap-4 px-8 py-6 bg-surface-container-lowest border-t border-surface-container-low z-10 sticky bottom-0">
+<button class="font-label text-sm font-medium text-on-surface-variant hover:text-on-surface px-6 py-2.5 rounded-md transition-colors uppercase tracking-wider" type="button" style="">
+                Cancel
+            </button>
+<button class="font-label text-sm font-medium text-on-primary bg-gradient-to-br from-primary to-primary-container px-6 py-2.5 rounded-md hover:shadow-[0px_4px_12px_rgba(26,54,93,0.2)] transition-all uppercase tracking-wider" type="button" style="">
+                Save Changes
+            </button>
+</footer>
+</main>
+<style>
+        /* Custom Scrollbar for a cleaner look */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: var(--tw-colors-surface-container-highest, #e3e2e6);
+            border-radius: 20px;
+        }
+    </style>
+</body></html>

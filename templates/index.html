@@ -1,0 +1,464 @@
+<!DOCTYPE html><html class="light" lang="da"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dashboard - TVK</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ffddba",
+                      "primary": "#002045",
+                      "secondary-fixed": "#d3e4fe",
+                      "on-secondary-container": "#54647a",
+                      "surface-tint": "#455f88",
+                      "secondary-container": "#d0e1fb",
+                      "inverse-surface": "#2f3033",
+                      "outline-variant": "#c4c6cf",
+                      "tertiary-container": "#4f2e00",
+                      "surface-dim": "#dad9dd",
+                      "primary-fixed": "#d6e3ff",
+                      "on-background": "#1a1c1e",
+                      "background": "#faf9fd",
+                      "surface-container": "#efedf1",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#86a0cd",
+                      "on-primary-fixed": "#001b3c",
+                      "on-tertiary-fixed-variant": "#633f0f",
+                      "primary-fixed-dim": "#adc7f7",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed": "#0b1c30",
+                      "tertiary-fixed-dim": "#f2bc82",
+                      "secondary": "#505f76",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#2d476f",
+                      "on-tertiary-fixed": "#2b1700",
+                      "inverse-on-surface": "#f1f0f4",
+                      "primary-container": "#1a365d",
+                      "surface-container-high": "#e9e7eb",
+                      "surface": "#faf9fd",
+                      "tertiary": "#321b00",
+                      "on-surface-variant": "#43474e",
+                      "on-tertiary-container": "#c6955e",
+                      "surface-container-highest": "#e3e2e6",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#b7c8e1",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f4f3f7",
+                      "inverse-primary": "#adc7f7",
+                      "on-secondary-fixed-variant": "#38485d",
+                      "surface-bright": "#faf9fd",
+                      "on-surface": "#1a1c1e",
+                      "outline": "#74777f",
+                      "on-error-container": "#93000a",
+                      "surface-variant": "#e3e2e6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Manrope"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf9fd; /* background */
+            color: #1a1c1e; /* on-background */
+        }
+        h1, h2, h3, h4, h5, h6, .font-headline {
+            font-family: 'Manrope', sans-serif;
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 bg-[#efedf1] dark:bg-slate-900 border-r border-transparent flex flex-col p-6 gap-y-2 flat no-shadows z-20 hidden md:flex">
+<!-- Header -->
+<div class="mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
+<span class="material-symbols-outlined" data-icon="apartment" style="">apartment</span>
+</div>
+<div class="flex flex-col">
+<span class="font-['Manrope'] font-bold text-[#1a365d] dark:text-blue-100 leading-tight" style="">TVK</span>
+<span class="text-xs text-on-surface-variant font-label" style=""></span>
+</div>
+</div>
+<!-- Main Navigation -->
+<div class="flex-1 flex flex-col gap-2">
+<!-- Active: Dashboard -->
+
+      <a class="bg-white dark:bg-slate-900 text-[#1a365d] dark:text-white shadow-sm rounded-lg mx-2 my-1 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all flex items-center gap-3 px-4 py-2.5 group" href="/index">
+        <span class="material-symbols-outlined text-[20px] opacity-70 group-hover:opacity-100 transition-opacity">grid_view</span>
+        <span class="font-medium">Dashboard</span>
+      </a>
+
+      <a class="text-slate-600 dark:text-slate-400 mx-2 my-1 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all flex items-center gap-3 px-4 py-2.5 rounded-lg group" href="/kalender">
+        <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+        <span class="font-medium">Kalender</span>
+      </a>
+
+      <a class="text-slate-600 dark:text-slate-400 mx-2 my-1 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all flex items-center gap-3 px-4 py-2.5 rounded-lg group" href="/kurser">
+        <span class="material-symbols-outlined text-[20px] opacity-70 group-hover:opacity-100 transition-opacity" style="font-variation-settings:'FILL' 1;">chef_hat</span>
+        <span class="font-semibold">Kurser</span>
+      </a>
+
+      <a class="text-slate-600 dark:text-slate-400 mx-2 my-1 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all flex items-center gap-3 px-4 py-2.5 rounded-lg group" href="/bookinger">
+        <span class="material-symbols-outlined text-[20px] opacity-70 group-hover:opacity-100 transition-opacity">confirmation_number</span>
+        <span class="font-medium">Bookinger</span>
+      </a>
+
+      <a class="text-slate-600 dark:text-slate-400 mx-2 my-1 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all flex items-center gap-3 px-4 py-2.5 rounded-lg group" href="/medarbejdere">
+        <span class="material-symbols-outlined text-[20px] opacity-70 group-hover:opacity-100 transition-opacity">badge</span>
+        <span class="font-medium">Medarbejdere</span>
+      </a>
+</div>
+<!-- CTA -->
+
+<!-- Footer Navigation -->
+<div class="flex flex-col gap-2 pt-4 border-t border-outline-variant/20">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-[#1a365d] dark:hover:text-white hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors rounded-xl font-['Inter'] text-sm font-medium ease-out duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="help_outline" style="">help_outline</span>
+<span class="" style="">Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-[#1a365d] dark:hover:text-white hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors rounded-xl font-['Inter'] text-sm font-medium ease-out duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="logout" style="">logout</span>
+<span class="" style="">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 bg-surface h-screen overflow-y-auto relative">
+<!-- Mobile Top Nav Bar (Visible only on md:hidden) -->
+<header class="md:hidden flex justify-between items-center px-6 py-4 w-full bg-[#faf9fd]/80 dark:bg-slate-950/80 backdrop-blur-xl sticky top-0 z-40 no-border tonal-shift-bg shadow-none">
+<div class="text-xl font-black tracking-tighter text-[#1a365d] dark:text-blue-200 font-headline" style="">TVK Systemet</div>
+<div class="flex gap-4">
+<button class="text-[#1a365d] dark:text-blue-400 active:scale-95 transition-transform" style=""><span class="material-symbols-outlined" data-icon="notifications" style="">notifications</span></button>
+<button class="text-[#1a365d] dark:text-blue-400 active:scale-95 transition-transform" style=""><span class="material-symbols-outlined" data-icon="settings" style="">settings</span></button>
+<img alt="Manager Profile" class="w-8 h-8 rounded-full ml-2" data-alt="close up of a professional man in a modern office with natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfH4TQf_TJ0lYzA6tAidtXjOasZ98POG4kAvMi3Ohz5-7sYwBqahEUQDG0vlh8eOjOW-N42buJuPgxfrU5X7KXcW8VkFqp9X-WteUz8G5rmd2VvJZpT-ThtJaw5KLRdJqpYMgcOtfogKg-WeI4Bej1hXwYOgesQzOoT04RjyYBn6izf_6BE3YoKI-qs8fdK2u9fSUcoykvATOEpGJJb_PhAPxhxlNXKbVUVMvZ8qUvVsseitrCkIy-bDgTt7l1ysDsinshOsQQh20" style="">
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto space-y-8">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-2">
+<div>
+<p class="text-xs uppercase tracking-wider text-on-surface-variant font-medium mb-2">14. Januar</p>
+<h1 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface" id="dashboard-title" style="">Dashboard - Valby</h1>
+<p class="font-body text-on-surface-variant mt-1 text-sm" style="">Oversigt over dagens aktiviteter</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex p-1 bg-surface-container-low rounded-xl" id="location-switcher">
+<button class="location-btn px-4 py-2 bg-surface-container-lowest shadow-[0px_4px_12px_rgba(26,28,30,0.04)] font-label text-sm font-medium text-primary rounded-lg" data-location="valby">Valby</button>
+<button class="location-btn px-4 py-2 font-label text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-location="kbhs">KBH-S</button>
+</div>
+</div>
+</div>
+<!-- Metrics Top Section (Symmetrisk layout) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-5 items-stretch">
+<!-- Metric 1: Dagens omsætning -->
+<div class="md:col-span-6 bg-surface-container-lowest rounded-xl p-5 shadow-[0px_12px_32px_rgba(26,28,30,0.06)] flex flex-col border border-outline-variant/20">
+<div class="flex items-center gap-3 text-on-surface-variant mb-3">
+<span class="material-symbols-outlined text-xl" data-icon="payments" style="">payments</span>
+<h2 class="font-headline font-semibold text-sm uppercase tracking-wide" style="">Dagens omsætning eks moms</h2>
+</div>
+<div>
+<div class="font-headline text-5xl font-extrabold text-on-surface tracking-tight" id="revenue-value" style="">kr. 42.500,-</div>
+<div class="font-label text-sm text-on-secondary-fixed-variant mt-2 flex items-center gap-1" id="revenue-trend" style="">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up" style="">trending_up</span>
+              +12% fra i går
+            </div>
+</div>
+</div>
+<!-- Metric 3: Antal bookinger i dag -->
+<div class="md:col-span-6 bg-surface-container-lowest rounded-xl p-5 shadow-[0px_12px_32px_rgba(26,28,30,0.06)] flex flex-col border border-outline-variant/20">
+<div class="flex items-center gap-3 text-on-surface-variant mb-3">
+<span class="material-symbols-outlined text-xl" data-icon="book_online" style="">book_online</span>
+<h2 class="font-headline font-semibold text-sm uppercase tracking-wide" style="">Antal gæster i dag</h2>
+</div>
+<div>
+<div class="font-headline text-5xl font-extrabold text-on-surface tracking-tight" id="guest-count" style="">58</div>
+<div class="font-label text-sm text-on-surface-variant mt-2 flex items-center gap-1" id="guest-subtitle" style="">
+<span class="material-symbols-outlined text-sm" data-icon="event_seat" style="">event_seat</span>
+              Fordelt på 1 kursus</div>
+</div>
+</div>
+<!-- Metric 2: Bemandingsstatus (periode) -->
+<div class="md:col-span-12 bg-surface-container-lowest rounded-xl p-5 shadow-[0px_12px_32px_rgba(26,28,30,0.06)] flex flex-col border border-outline-variant/20">
+<div class="flex items-center gap-3 text-on-surface-variant mb-4">
+<span class="material-symbols-outlined text-xl" data-icon="schedule">schedule</span>
+<h2 class="font-headline font-semibold text-sm uppercase tracking-wide">Bemandingsstatus de næste 30 dage</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 font-label text-sm">
+<div class="md:col-span-5 space-y-3">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-on-surface">Dækkede vagter</span>
+<span class="font-semibold text-on-surface" id="staffing-coverage">0%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary-container rounded-full transition-all duration-300" id="staffing-coverage-bar" style="width: 0%"></div>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant" id="staffing-summary">Ingen manglende vagter i perioden.</p>
+</div>
+<div class="md:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-2">
+<div class="rounded-lg bg-surface-container-low p-2.5 border border-outline-variant/20">
+<p class="text-xs text-on-surface-variant uppercase tracking-wide">Mangler personale</p>
+<p class="font-headline text-2xl font-extrabold text-error" id="staffing-open">0</p>
+</div>
+<div class="rounded-lg bg-surface-container-low p-2.5 border border-outline-variant/20">
+<p class="text-xs text-on-surface-variant uppercase tracking-wide">Planlagte kurser</p>
+<p class="font-headline text-2xl font-extrabold text-on-surface" id="staffing-total">0</p>
+</div>
+<div class="rounded-lg bg-surface-container-low p-2.5 border border-outline-variant/20">
+<p class="text-xs text-on-surface-variant uppercase tracking-wide">Undervisere mangler</p>
+<p class="font-headline text-2xl font-extrabold text-on-surface" id="staffing-chef-open">0</p>
+</div>
+<div class="rounded-lg bg-surface-container-low p-2.5 border border-outline-variant/20">
+<p class="text-xs text-on-surface-variant uppercase tracking-wide">Afviklere mangler</p>
+<p class="font-headline text-2xl font-extrabold text-on-surface" id="staffing-host-open">0</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Section: Upcoming Courses List -->
+<section class="mt-12 bg-surface-container-low rounded-xl p-8 border border-outline-variant/20">
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface" id="upcoming-title" style="">Upcoming Courses (Næste 7 dage)</h2>
+<button class="text-primary font-label text-sm font-semibold hover:underline flex items-center gap-1" style="">
+                        Se fuld kalender <span class="material-symbols-outlined text-sm" data-icon="arrow_forward" style="">arrow_forward</span>
+</button>
+</div>
+<div class="flex flex-col gap-4" id="upcoming-courses-list">
+<!-- Course Card 1: Fully Staffed -->
+<div class="location-course bg-surface-container-lowest rounded-xl p-6 shadow-[0px_12px_32px_rgba(26,28,30,0.06)] border border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-surface-bright transition-colors duration-200 cursor-pointer" data-location-course="valby">
+<div class="flex items-start gap-4 flex-1">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-container" data-icon="restaurant" style="">restaurant</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline text-lg font-semibold text-on-surface" style="">Franske fristelser - bistro classique</h3>
+<div class="font-label text-sm text-on-surface-variant mt-1 flex items-center gap-4">
+<span class="flex items-center gap-1" style=""><span class="material-symbols-outlined text-[16px]" data-icon="calendar_month" style="">calendar_month</span> I dag, 16:30 - 20:30</span>
+<span class="flex items-center gap-1" style=""><span class="material-symbols-outlined text-[16px]" data-icon="group" style="">group</span> 20 PAX</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 border-t md:border-t-0 md:border-l border-outline-variant/20 pt-4 md:pt-0 md:pl-6">
+<!-- Status Badge: Fully Staffed -->
+<div class="bg-surface-container-high px-3 py-1.5 rounded-full flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-on-secondary-fixed-variant"></div>
+<span class="font-label text-xs font-semibold text-on-surface" style="">Fuldt Bemandet</span>
+</div>
+<div class="flex -space-x-2">
+<img alt="Chef" class="w-8 h-8 rounded-full border-2 border-surface-container-lowest z-10" data-alt="portrait of a professional chef smiling in a kitchen setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCavsQaoUtUse2PaXKlNbRbs-DeeLbtV2rUbRNzpWxIX0XCvil9K7t1YbOrgX-0mj8xH5Nj2ZKAqiJvgdGGg1N0UoMpCe2J4zjF42QJ3Jn8UvP6mdTrPr2Q25KSRPgP5apBb1SlmcI9R0pOikH5dZbTmMnbK_OuP7raMEMIZJF6SlnobzFm9riuw5EWmJy9y_IT0Jykq4_wVhMadjcGNP0njKaLhgFlPi4M1n0gKuflpinBK5T1QchzWUHq6KdY5KbJjAnmCQCaln8" style="">
+<img alt="Assistant" class="w-8 h-8 rounded-full border-2 border-surface-container-lowest z-0" data-alt="portrait of a young female kitchen assistant in uniform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALQciEEBzn_MowBk7wanVa508oa3L82BG1PqI5MV6zeTLyKE12zKOVaQbWPNalP19bUMLbVF0zc9oEXXqrpKvF-aAzLdb3vrNAYaL1I3JR1QEJvCwv3MaH2F-MnNpESJepR3AHLHmzFemhwiHwKQPlZFXgxX-xRK50yR_IfaNuh9VUcNEVx3MA0hrEpIgUdTnhMTkCD56FzKhmwEZ75Tv_4adg7IM9QHcwwfNN1rxfyPyl-L9qv_5kR-3YqTba62oGN67oogd6Agk" style="">
+</div>
+</div>
+</div>
+<!-- Course Card 2: Partial Staff -->
+<div class="location-course bg-surface-container-lowest rounded-xl p-6 shadow-[0px_12px_32px_rgba(26,28,30,0.06)] border border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-surface-bright transition-colors duration-200 cursor-pointer" data-location-course="valby">
+<div class="flex items-start gap-4 flex-1">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-container" data-icon="beer_meal" style="">beer_meal</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline text-lg font-semibold text-on-surface" style="">Bøf og bajer - Superior</h3>
+<div class="font-label text-sm text-on-surface-variant mt-1 flex items-center gap-4">
+<span class="flex items-center gap-1" style=""><span class="material-symbols-outlined text-[16px]" data-icon="calendar_month" style="">calendar_month</span> I dag, 18:00 - 22:00</span>
+<span class="flex items-center gap-1" style=""><span class="material-symbols-outlined text-[16px]" data-icon="group" style="">group</span> 38 PAX</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 border-t md:border-t-0 md:border-l border-outline-variant/20 pt-4 md:pt-0 md:pl-6">
+<!-- Status Badge: Partial -->
+<div class="bg-surface-container-high px-3 py-1.5 rounded-full flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></div>
+<span class="font-label text-xs font-semibold text-on-surface" style="">Mangler Afvikler</span>
+</div>
+<div class="flex -space-x-2">
+<img alt="Chef" class="w-8 h-8 rounded-full border-2 border-surface-container-lowest z-10" data-alt="portrait of a male sushi chef looking serious" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlaaF1KrhYXkUkmmyDQIqc2azZO01b5gP88Bl8P6wJVrRiKXMRiSBSNvEqXTuTXdzM0U7cUMPgyeOFx45ctAKDsOYIUaD4StO8SDeNLFGstTGA59jxdJcLCNkfw4zPAVv6ecVWIC029Taha7KYyYM983jgrrzQDyD_zbHDVv2sOcMxlKNoo2IeUO5Z8M8OqZbVt5QKiG9NB3j8hMfY_Mcs6pyem-OhX1WK9hlcd6oh_kOmOJMAnDZH-dfbZEme-6ghoWRCUDlNI_c" style="">
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-lowest bg-surface-container flex items-center justify-center z-0 border-dashed">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="person_add" style="">person_add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Course Card 3: Missing Staff (Highlighted) -->
+<div class="location-course bg-surface-container-lowest rounded-xl p-6 shadow-[0px_12px_32px_rgba(26,28,30,0.06)] border border-error/30 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-surface-bright transition-colors duration-200 cursor-pointer relative overflow-hidden" data-location-course="valby">
+<!-- Left Warning Indicator Line -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<div class="flex items-start gap-4 flex-1 ml-2">
+<div class="w-12 h-12 rounded-lg bg-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-error-container" data-icon="local_pizza" style="">local_pizza</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline text-lg font-semibold text-on-surface" style="">Italienske klassikere - il classico</h3>
+<div class="font-label text-sm text-on-surface-variant mt-1 flex items-center gap-4">
+<span class="flex items-center gap-1" style=""><span class="material-symbols-outlined text-[16px]" data-icon="calendar_month" style="">calendar_month</span> Torsdag, 17:00 - 21:00</span>
+<span class="flex items-center gap-1" style=""><span class="material-symbols-outlined text-[16px]" data-icon="group" style="">group</span> 8 PAX</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 border-t md:border-t-0 md:border-l border-outline-variant/20 pt-4 md:pt-0 md:pl-6">
+<!-- Status Badge: Missing Staff -->
+<div class="bg-error-container px-3 py-1.5 rounded-full flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<span class="font-label text-xs font-bold text-on-error-container" style="">Ingen Bemanding!</span>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container-low border border-outline-variant/40 px-3 py-1 rounded-md text-xs font-label font-medium text-on-surface hover:bg-surface-container transition-colors" style="">Tildel</button>
+</div>
+</div>
+</div>
+
+<div class="hidden bg-surface-container-lowest rounded-xl p-8 border border-dashed border-outline-variant/40 text-center" id="kbhs-empty-state">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-surface-container mb-3">
+<span class="material-symbols-outlined text-on-surface-variant">event_busy</span>
+</div>
+<p class="font-headline text-lg font-semibold text-on-surface">Ingen kommende kurser i KBH-S</p>
+<p class="text-sm text-on-surface-variant mt-1">Der er ingen planlagte kurser de næste 7 dage.</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<script>
+  const locationButtons = document.querySelectorAll('.location-btn');
+  const locationCourses = document.querySelectorAll('[data-location-course]');
+  const kbhsEmptyState = document.getElementById('kbhs-empty-state');
+  const dashboardTitle = document.getElementById('dashboard-title');
+  const dashboardDate = document.getElementById('dashboard-date');
+  const revenueValue = document.getElementById('revenue-value');
+  const revenueTrend = document.getElementById('revenue-trend');
+  const guestCount = document.getElementById('guest-count');
+  const guestSubtitle = document.getElementById('guest-subtitle');
+  const upcomingTitle = document.getElementById('upcoming-title');
+  const staffingCoverage = document.getElementById('staffing-coverage');
+  const staffingCoverageBar = document.getElementById('staffing-coverage-bar');
+  const staffingOpen = document.getElementById('staffing-open');
+  const staffingTotal = document.getElementById('staffing-total');
+  const staffingChefOpen = document.getElementById('staffing-chef-open');
+  const staffingHostOpen = document.getElementById('staffing-host-open');
+  const staffingSummary = document.getElementById('staffing-summary');
+
+  const dashboardByLocation = {
+    valby: {
+      title: 'Dashboard - Valby',
+      date: '14. Januar 2026',
+      revenue: 'kr. 63.500,-',
+      trend: '+12% fra i går',
+      guests: '38',
+      guestDetail: 'Fordelt på 2 kurser',
+      upcoming: 'Upcoming Courses Valby (Næste 7 dage)',
+      staffing: {
+        total: 42,
+        open: 9,
+        chefOpen: 3,
+        hostOpen: 6
+      }
+    },
+    kbhs: {
+      title: 'Dashboard - KBH-S',
+      date: '14. Januar 2026',
+      revenue: 'kr. 0,-',
+      trend: '+0% fra i går',
+      guests: '0',
+      guestDetail: 'Fordelt på 0 kurser',
+      upcoming: 'Upcoming Courses KBH-S (Næste 7 dage)',
+      staffing: {
+        total: 24,
+        open: 14,
+        chefOpen: 5,
+        hostOpen: 9
+      }
+    }
+  };
+
+  function updateStaffingMetric(staffing) {
+    const total = Math.max(staffing.total || 0, 0);
+    const open = Math.min(Math.max(staffing.open || 0, 0), total);
+    const covered = total - open;
+    const coveragePercent = total ? Math.round((covered / total) * 100) : 0;
+
+    if (staffingCoverage) staffingCoverage.textContent = `${coveragePercent}%`;
+    if (staffingCoverageBar) staffingCoverageBar.style.width = `${coveragePercent}%`;
+    if (staffingOpen) staffingOpen.textContent = String(open);
+    if (staffingTotal) staffingTotal.textContent = String(total);
+    if (staffingChefOpen) staffingChefOpen.textContent = String(staffing.chefOpen || 0);
+    if (staffingHostOpen) staffingHostOpen.textContent = String(staffing.hostOpen || 0);
+
+    if (staffingSummary) {
+      staffingSummary.textContent = open
+        ? `${open} vagter mangler stadig for at dække de næste 30 dage.`
+        : 'Alle vagter er fordelt i de næste 30 dage.';
+    }
+  }
+
+  function setActiveLocation(location) {
+    locationButtons.forEach((button) => {
+      const isActive = button.dataset.location === location;
+
+      button.classList.toggle('bg-surface-container-lowest', isActive);
+      button.classList.toggle('shadow-[0px_4px_12px_rgba(26,28,30,0.04)]', isActive);
+      button.classList.toggle('text-primary', isActive);
+      button.classList.toggle('text-on-surface-variant', !isActive);
+      button.classList.toggle('hover:text-on-surface', !isActive);
+    });
+
+    const dashboard = dashboardByLocation[location] || dashboardByLocation.valby;
+
+    if (dashboardTitle) dashboardTitle.textContent = dashboard.title;
+    if (dashboardDate) dashboardDate.textContent = dashboard.date;
+    if (revenueValue) revenueValue.textContent = dashboard.revenue;
+    if (guestCount) guestCount.textContent = dashboard.guests;
+    if (upcomingTitle) upcomingTitle.textContent = dashboard.upcoming;
+    updateStaffingMetric(dashboard.staffing || {});
+
+    locationCourses.forEach((course) => {
+      course.classList.toggle('hidden', course.dataset.locationCourse !== location);
+    });
+
+    if (kbhsEmptyState) {
+      kbhsEmptyState.classList.toggle('hidden', location !== 'kbhs');
+    }
+
+    if (revenueTrend) {
+      revenueTrend.innerHTML = '<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span> ' + dashboard.trend;
+    }
+
+    if (guestSubtitle) {
+      guestSubtitle.innerHTML = '<span class="material-symbols-outlined text-sm" data-icon="event_seat">event_seat</span> ' + dashboard.guestDetail;
+    }
+  }
+
+  locationButtons.forEach((button) => {
+    button.addEventListener('click', () => setActiveLocation(button.dataset.location));
+  });
+
+  setActiveLocation('valby');
+</script>
+</body></html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html><html class="light" lang="da"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Bookinger - TVK</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#f2bc82",
+                        "secondary": "#505f76",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#2b1700",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "on-secondary-fixed": "#0b1c30",
+                        "primary-fixed-dim": "#adc7f7",
+                        "on-tertiary-fixed-variant": "#633f0f",
+                        "on-primary-fixed": "#001b3c",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#efedf1",
+                        "background": "#faf9fd",
+                        "on-primary-container": "#86a0cd",
+                        "primary-fixed": "#d6e3ff",
+                        "on-background": "#1a1c1e",
+                        "surface-dim": "#dad9dd",
+                        "tertiary-container": "#4f2e00",
+                        "outline-variant": "#c4c6cf",
+                        "on-secondary-container": "#54647a",
+                        "secondary-fixed": "#d3e4fe",
+                        "inverse-surface": "#2f3033",
+                        "surface-tint": "#455f88",
+                        "secondary-container": "#d0e1fb",
+                        "tertiary-fixed": "#ffddba",
+                        "primary": "#002045",
+                        "on-error-container": "#93000a",
+                        "outline": "#74777f",
+                        "surface-variant": "#e3e2e6",
+                        "on-surface": "#1a1c1e",
+                        "surface-bright": "#faf9fd",
+                        "surface-container-low": "#f4f3f7",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "inverse-primary": "#adc7f7",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e3e2e6",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-tertiary-container": "#c6955e",
+                        "on-surface-variant": "#43474e",
+                        "tertiary": "#321b00",
+                        "inverse-on-surface": "#f1f0f4",
+                        "surface-container-high": "#e9e7eb",
+                        "surface": "#faf9fd",
+                        "primary-container": "#1a365d"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    fontFamily: {
+                        headline: ["Manrope"],
+                        body: ["Inter"],
+                        label: ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #faf9fd; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen flex overflow-hidden">
+<nav class="bg-[#efedf1] dark:bg-slate-950 text-[#1a365d] dark:text-blue-400 font-['Inter'] text-sm antialiased docked left-0 h-screen w-64 no-border bg-gradient-to-r from-[#efedf1] to-[#faf9fd] flat transition-transform duration-300 ease-in-out flex flex-col fixed left-0 top-0 h-full border-r border-transparent flex-shrink-0 z-40">
+<div class="px-6 pt-8 pb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
+<span class="material-symbols-outlined" data-icon="apartment">apartment</span>
+</div>
+<div>
+<div class="font-['Manrope'] font-extrabold tracking-tighter text-[#1a365d] dark:text-white text-lg">TVK</div>
+<div class="text-xs text-on-surface-variant opacity-80 tracking-wider uppercase"></div>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-1 px-2 mt-4">
+<a class="text-slate-600 dark:text-slate-400 mx-2 my-1 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all flex items-center gap-3 px-4 py-2.5 rounded-lg group" href="/index">
+        <span class="material-symbols-outlined text-[20px] opacity-70 group-hover:opacity-100 transition-opacity">grid_view</span>
+        <span class="font-medium">Dashboard</span>
+      </a>
+
+      <a class="text-slate-600 dark:text-slate-400 mx-2 my-1 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all flex items-center gap-3 px-4 py-2.5 rounded-lg group" href="/kalender">
+        <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+        <span class="font-medium">Kalender</span>
+      </a>
+
+      <a class="text-slate-600 dark:text-slate-400 mx-2 my-1 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all flex items-center gap-3 px-4 py-2.5 rounded-lg group" href="/kurser">
+        <span class="material-symbols-outlined text-[20px] opacity-70 group-hover:opacity-100 transition-opacity" style="font-variation-settings:'FILL' 1;">chef_hat</span>
+        <span class="font-semibold">Kurser</span>
+      </a>
+
+      <a class="bg-white dark:bg-slate-900 text-[#1a365d] dark:text-white shadow-sm rounded-lg mx-2 my-1 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all flex items-center gap-3 px-4 py-2.5 group" href="/bookinger">
+        <span class="material-symbols-outlined text-[20px] opacity-70 group-hover:opacity-100 transition-opacity">confirmation_number</span>
+        <span class="font-medium">Bookinger</span>
+      </a>
+
+      <a class="text-slate-600 dark:text-slate-400 mx-2 my-1 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all flex items-center gap-3 px-4 py-2.5 rounded-lg group" href="/medarbejdere">
+        <span class="material-symbols-outlined text-[20px] opacity-70 group-hover:opacity-100 transition-opacity">badge</span>
+        <span class="font-medium">Medarbejdere</span>
+      </a>
+</div>
+<div class="p-6 mb-2">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-md py-2.5 text-sm font-medium uppercase tracking-[0.05em] hover:opacity-90 transition-opacity shadow-[0_4px_12px_rgba(0,32,69,0.15)] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Opret booking
+            </button>
+</div><div class="mt-auto flex flex-col gap-y-1 pt-4 border-t border-outline-variant/20 px-2">
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-600 dark:text-slate-400 hover:text-[#1a365d] dark:hover:text-white hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors ease-out duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px] opacity-70 group-hover:opacity-100 transition-opacity">help_outline</span>
+<span class="font-medium">Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-600 dark:text-slate-400 hover:text-[#1a365d] dark:hover:text-white hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors ease-out duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px] opacity-70 group-hover:opacity-100 transition-opacity">logout</span>
+<span class="font-medium">Logout</span>
+</a>
+</div>
+</nav>
+<main class="flex-1 ml-64 bg-surface h-screen overflow-y-auto">
+<header class="sticky top-0 z-30 bg-surface/80 backdrop-blur-xl px-10 py-6 flex justify-between items-center">
+<div>
+<p class="text-xs uppercase tracking-wider text-on-surface-variant font-medium mb-2">14. Januar</p>
+<h1 class="font-headline font-extrabold text-3xl tracking-tight text-on-surface" id="bookings-title">Bookinger - Valby</h1>
+<p class="text-sm text-on-surface-variant mt-1">Oversigt over kunder, deltagere og bookingværdi</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex p-1 bg-surface-container-low rounded-xl" id="location-switcher">
+<button class="location-btn px-4 py-2 bg-surface-container-lowest shadow-[0px_4px_12px_rgba(26,28,30,0.04)] font-label text-sm font-medium text-primary rounded-lg" data-location="valby">Valby</button>
+<button class="location-btn px-4 py-2 font-label text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-location="kbhs">KBH-S</button>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-variant flex items-center justify-center transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<div class="px-10 pb-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+
+
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0px_12px_32px_rgba(26,28,30,0.04)] border border-outline-variant/20">
+<p class="text-xs uppercase tracking-wider text-on-surface-variant font-medium">Forventet omsætning</p>
+<p class="font-headline text-4xl font-extrabold text-on-surface mt-2" id="total-revenue">0 kr.</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0px_12px_32px_rgba(26,28,30,0.04)] border border-outline-variant/20">
+<p class="text-xs uppercase tracking-wider text-on-surface-variant font-medium">Gns. pris pr. deltager</p>
+<p class="font-headline text-4xl font-extrabold text-primary mt-2" id="avg-seat-price">0 kr.</p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-2 mb-8 flex items-center gap-2 shadow-[0px_4px_16px_rgba(26,28,30,0.02)]">
+<div class="flex-1 bg-surface-container-lowest rounded-lg border border-outline-variant/20 flex items-center px-4 py-2 hover:border-primary/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant/50 mr-2 text-[20px]">event</span>
+<input class="bg-transparent border-none outline-none text-sm text-on-surface w-full placeholder:text-on-surface-variant/50" placeholder="Dato eller booking-id" type="text">
+</div>
+
+<div class="flex-1 bg-surface-container-lowest rounded-lg border border-outline-variant/20 flex items-center px-4 py-2 hover:border-primary/20 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant/50 mr-2 text-[20px]">group</span>
+<span class="text-sm text-on-surface-variant flex-1">Alle statusser</span>
+<span class="material-symbols-outlined text-on-surface-variant/50 text-[18px]">arrow_drop_down</span>
+</div>
+<button class="bg-surface-container hover:bg-surface-variant text-on-surface rounded-lg px-4 py-2 text-sm font-medium transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Flere
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<article class="booking-card bg-surface-container-lowest rounded-xl p-6 shadow-[0px_12px_32px_rgba(26,28,30,0.04)] border border-outline-variant/20 flex flex-col hover:shadow-[0px_16px_40px_rgba(26,28,30,0.08)] transition-shadow" data-location-booking="valby" data-seats="19" data-total="34200">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                            Bekræftet
+                        </div>
+<span class="text-on-surface-variant text-sm font-medium">#B-6767</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+        Overstået
+    </div>
+</div>
+<h3 class="font-headline font-bold text-xl text-on-surface mb-1">Booket af: Marie Lund</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-[16px] opacity-70">schedule</span>13. Jan, 17:00 - 21:00
+</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Kunde</p>
+<p class="text-sm text-on-surface font-medium truncate">Novo Nordisk</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Deltagere</p>
+<p class="text-sm text-on-surface font-medium">19 deltagere</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Lokation</p>
+<p class="text-sm text-on-surface font-medium">Valby</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Pris</p>
+<p class="text-sm text-on-surface font-medium">34.200 kr.</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-surface-container-high flex justify-end">
+<button class="text-primary hover:text-primary-container text-sm font-semibold flex items-center gap-1 transition-colors uppercase tracking-wide">
+Se detaljer
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<article class="booking-card bg-surface-container-lowest rounded-xl p-6 shadow-[0px_12px_32px_rgba(26,28,30,0.04)] border border-outline-variant/20 flex flex-col hover:shadow-[0px_16px_40px_rgba(26,28,30,0.08)] transition-shadow" data-location-booking="valby" data-seats="20" data-total="36000">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                            Afventer betaling
+                        </div>
+<span class="text-on-surface-variant text-sm font-medium">#B-4920</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+        I dag
+    </div>
+</div>
+<h3 class="font-headline font-bold text-xl text-on-surface mb-1">Booket af: Thomas Madsen</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-[16px] opacity-70">schedule</span>14. Jan, 16:30 - 20:30
+</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Kunde</p>
+<p class="text-sm text-on-surface font-medium truncate">Google</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Deltagere</p>
+<p class="text-sm text-on-surface font-medium">20 deltagere</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Lokation</p>
+<p class="text-sm text-on-surface font-medium">Valby</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Pris</p>
+<p class="text-sm text-on-surface font-medium">36.000 kr.</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-surface-container-high flex justify-end">
+<button onclick="location.href='/booking';" class="text-primary hover:text-primary-container text-sm font-semibold flex items-center gap-1 transition-colors uppercase tracking-wide">
+Se detaljer
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<article class="booking-card bg-surface-container-lowest rounded-xl p-6 shadow-[0px_12px_32px_rgba(26,28,30,0.04)] border border-outline-variant/20 flex flex-col hover:shadow-[0px_16px_40px_rgba(26,28,30,0.08)] transition-shadow" data-location-booking="valby" data-seats="38" data-total="68400">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                            Bekræftet
+                        </div>
+<span class="text-on-surface-variant text-sm font-medium">#B-4920</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+        Kommende
+    </div>
+</div>
+<h3 class="font-headline font-bold text-xl text-on-surface mb-1">Booket af: Lasse Bertelsen</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-[16px] opacity-70">schedule</span>14. Jan, 18:30 - 22:00
+</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Kunde</p>
+<p class="text-sm text-on-surface font-medium truncate">SMEG</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Deltagere</p>
+<p class="text-sm text-on-surface font-medium">38 deltagere</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Lokation</p>
+<p class="text-sm text-on-surface font-medium">Valby</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Pris</p>
+<p class="text-sm text-on-surface font-medium">68.400 kr.</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-surface-container-high flex justify-end">
+<button onclick="location.href='/booking';" class="text-primary hover:text-primary-container text-sm font-semibold flex items-center gap-1 transition-colors uppercase tracking-wide">
+Se detaljer
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<article class="booking-card bg-surface-container-lowest rounded-xl p-6 shadow-[0px_12px_32px_rgba(26,28,30,0.04)] border border-outline-variant/20 flex flex-col hover:shadow-[0px_16px_40px_rgba(26,28,30,0.08)] transition-shadow" data-location-booking="kbhs" data-seats="12" data-total="16800">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                            Bekræftet
+                        </div>
+<span class="text-on-surface-variant text-sm font-medium">#B-6767</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+        Overstået
+    </div>
+</div>
+<h3 class="font-headline font-bold text-xl text-on-surface mb-1">Booket af: Sofie Ravn</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-[16px] opacity-70">schedule</span>12. Jan, 16:30 - 20:30
+</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Kunde</p>
+<p class="text-sm text-on-surface font-medium truncate">Privat</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Deltagere</p>
+<p class="text-sm text-on-surface font-medium">12 deltagere</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Lokation</p>
+<p class="text-sm text-on-surface font-medium">KBH S</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Pris</p>
+<p class="text-sm text-on-surface font-medium">16.800 kr.</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-surface-container-high flex justify-end">
+<button class="text-primary hover:text-primary-container text-sm font-semibold flex items-center gap-1 transition-colors uppercase tracking-wide">
+Se detaljer
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<article class="booking-card bg-surface-container-lowest rounded-xl p-6 shadow-[0px_12px_32px_rgba(26,28,30,0.04)] border border-outline-variant/20 flex flex-col hover:shadow-[0px_16px_40px_rgba(26,28,30,0.08)] transition-shadow" data-location-booking="kbhs" data-seats="29" data-total="49300">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                            Bekræftet
+                        </div>
+<span class="text-on-surface-variant text-sm font-medium">#B-6767</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+        Overstået
+    </div>
+</div>
+<h3 class="font-headline font-bold text-xl text-on-surface mb-1">Booket af: Henrik Clausen</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-[16px] opacity-70">schedule</span>12. Jan, 17:00 - 21:00
+</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Kunde</p>
+<p class="text-sm text-on-surface font-medium truncate">Fuji film</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Deltagere</p>
+<p class="text-sm text-on-surface font-medium">29 deltagere</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Lokation</p>
+<p class="text-sm text-on-surface font-medium">KBH S</p>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant mb-1 font-medium uppercase tracking-wider">Pris</p>
+<p class="text-sm text-on-surface font-medium">49.300 kr.</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-surface-container-high flex justify-end">
+<button class="text-primary hover:text-primary-container text-sm font-semibold flex items-center gap-1 transition-colors uppercase tracking-wide">
+Se detaljer
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+</div>
+</div>
+</main>
+<script>
+    const locationButtons = document.querySelectorAll('.location-btn');
+    const bookingCards = document.querySelectorAll('.booking-card');
+    const bookingsTitle = document.getElementById('bookings-title');
+    const totalBookings = document.getElementById('total-bookings');
+    const totalSeats = document.getElementById('total-seats');
+    const totalRevenue = document.getElementById('total-revenue');
+    const avgSeatPrice = document.getElementById('avg-seat-price');
+
+    const titleByLocation = {
+        valby: 'Bookinger - Valby',
+        kbhs: 'Bookinger - KBH-S'
+    };
+
+    const formatDKK = (value) => `${value.toLocaleString('da-DK')} kr.`;
+
+    function setActiveLocation(location) {
+        let visibleCount = 0;
+        let seatCount = 0;
+        let revenueCount = 0;
+
+        locationButtons.forEach((button) => {
+            const isActive = button.dataset.location === location;
+            button.classList.toggle('bg-surface-container-lowest', isActive);
+            button.classList.toggle('shadow-[0px_4px_12px_rgba(26,28,30,0.04)]', isActive);
+            button.classList.toggle('text-primary', isActive);
+            button.classList.toggle('text-on-surface-variant', !isActive);
+            button.classList.toggle('hover:text-on-surface', !isActive);
+        });
+
+        bookingCards.forEach((card) => {
+            const isVisible = card.dataset.locationBooking === location;
+            card.classList.toggle('hidden', !isVisible);
+
+            if (isVisible) {
+                visibleCount += 1;
+                seatCount += Number(card.dataset.seats || 0);
+                revenueCount += Number(card.dataset.total || 0);
+            }
+        });
+
+        if (bookingsTitle) {
+            bookingsTitle.textContent = titleByLocation[location] || 'Bookinger';
+        }
+        if (totalBookings) {
+            totalBookings.textContent = visibleCount;
+        }
+        if (totalSeats) {
+            totalSeats.textContent = seatCount;
+        }
+        if (totalRevenue) {
+            totalRevenue.textContent = formatDKK(revenueCount);
+        }
+        if (avgSeatPrice) {
+            avgSeatPrice.textContent = seatCount > 0 ? formatDKK(Math.round(revenueCount / seatCount)) : '0 kr.';
+        }
+    }
+
+    locationButtons.forEach((button) => {
+        button.addEventListener('click', () => setActiveLocation(button.dataset.location));
+    });
+
+    setActiveLocation('valby');
+</script>
+</body></html>
