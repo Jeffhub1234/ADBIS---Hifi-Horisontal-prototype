@@ -24,27 +24,17 @@ source .venv/bin/activate
 
 3. Installer Flask:
 
-**Windows:**
-```powershell
+```
 pip install flask
 ```
 
-**Mac/Linux:**
-```bash
-pip install flask
-```
+
 
 4. Start applikationen:
-
-**Windows:**
-```powershell
+```
 python app.py
 ```
 
-**Mac/Linux:**
-```bash
-python app.py
-```
 
 5. Åbn browseren og gå til:
 
