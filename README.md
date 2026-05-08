@@ -1,7 +1,5 @@
 # ADBIS HORISTON
 
-Dette er en lille Flask-applikation med HTML-skabeloner i mappen `templates`.
-
 ## Krav
 
 - Python 3.10 eller nyere
@@ -12,20 +10,39 @@ Dette er en lille Flask-applikation med HTML-skabeloner i mappen `templates`.
 1. Åbn et terminalvindue i projektmappen.
 2. Opret og aktivér et virtuelt miljø, hvis du ikke allerede har et:
 
+**Windows:**
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
+**Mac/Linux:**
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
 3. Installer Flask:
 
+**Windows:**
 ```powershell
+pip install flask
+```
+
+**Mac/Linux:**
+```bash
 pip install flask
 ```
 
 4. Start applikationen:
 
+**Windows:**
 ```powershell
+python app.py
+```
+
+**Mac/Linux:**
+```bash
 python app.py
 ```
 
