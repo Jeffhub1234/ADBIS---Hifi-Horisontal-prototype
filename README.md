@@ -1,4 +1,4 @@
-# ADBIS HORISTON
+# ADBIS HORISTONTAL
 
 ## Krav
 
